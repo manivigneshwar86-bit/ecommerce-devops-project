@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  apache-site:
+    build: ./http-site
+    container_name: apache-site
+    ports:
+      - "8081:80"
+
+  nginx-site:
+    build: ./nginx-site
+    container_name: nginx-site
+    ports:
+      - "8082:80"
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
