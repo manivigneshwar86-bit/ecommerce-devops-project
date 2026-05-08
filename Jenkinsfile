@@ -10,9 +10,9 @@ pipeline {
             }
         }
 
-        stage('Stop Old Containers') {
+        stage('Force Remove Old Containers') {
             steps {
-                sh 'docker-compose down || true'
+                sh 'docker rm -f apache-site nginx-site prometheus grafana || true'
             }
         }
 
