@@ -5,7 +5,8 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/manivigneshwar86-bit/ecommerce-devops-project.git'
+                git branch: 'main',
+                url: 'https://github.com/manivigneshwar86-bit/ecommerce-devops-project.git'
             }
         }
 
